@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>公积金统计</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+
+
+</head>
+<body>
+<div class="wrap" th:if="${not #lists.isEmpty(Students)}" th:each="student:${Students}">
+    <div class="item_title">借贷信息</div>
+    <div class="row equal bg-row">
+        <div class="col-xs-6 col-md-1 panel item-color"><p>合同号</p></div>
+        <div class="col-xs-6 col-md-3 panel"><p th:text="${#strings.defaultString(student.stu_id,'未知')}"/>
+        </div>
+        <div class="col-xs-6 col-md-1 panel item-color"><p>委贷银行</p></div>
+        <div class="col-xs-6 col-md-2 panel"><p th:text="${#strings.defaultString(student.stu_name,'未知')}"/>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
